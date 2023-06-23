@@ -1,12 +1,55 @@
-.header 
+$base-dis: flex 
+$gap: 42px
+
+@mixin title()
     display: flex
+    flex-direction: column
+    align-self: stretch
+    font-size: 40px
+    font-weight: 600
+    letter-spacing: 0.8px
+
+@mixin text()
+    font-size: 22px
+    font-family: Arial, sans-serif
+    line-height: 128%
+
+@mixin box-inf()
+    border-radius: 16px
+    box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.08)
+
+@mixin box-inf-row()
+    display: flex
+    align-items: flex-start
+    gap: 24px
+    align-self: stretch
+    
+
+@mixin types()
+    display: flex
+    width: 1512px
+    padding: 0px 0px 140px 0px
+    flex-direction: column
+    align-items: center
+    gap: $gap
+    
+@mixin head()
+    
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 16px
+    align-self: stretch
+
+.header 
+    display: $base-dis
     width: 100%
     padding: 32px 0px
     align-items: center
     gap: 56px
 
 .header__nav
-    display: flex
+    display: $base-dis
     justify-content: space-between
     align-items: center
     flex: 1 0 0
@@ -16,14 +59,14 @@
 
 
 .scroll_web
-    display: flex
+    display: $base-dis
     flex-direction: column
     align-items: flex-start
     margin: 0px
     font-family: 'Montserrat', sans-serif
 
 .header__nav_list
-    display: flex
+    display: $base-dis
     padding: 2px 0px 0px 0px
     align-items: center
     gap: 36px
@@ -39,30 +82,129 @@
     color: #000
     text-decoration: none
     margin-right: 26px
+    gap: 10px
+
+.header__search
+    padding: 5px
 
 .header__dop
-    display: flex
+    display: $base-dis
     align-items: center
     position: relative
 
 .icon-coub
-    width: 532px
-    height: 532px
+    margin: 0
     flex-shrink: 0
 
+.coub
+    height: 440px
+
 .hello-screen
-    display: flex
+    display: $base-dis
 
 
 .hello-screen__conteiner
-    display: flex
+    display: $base-dis
     padding: 40px 115px 99px 31px
     align-items: center
+    justify-content: space-between
 
-.hello-screen__body
-    display: flex
-    margin: 0
+.hello-screen__inf
+    display: $base-dis
+    flex-direction: column
+    //align-self: stretch
+    //justify-content: space-between
+    width: calc(50% - -98px)
 
 .content
     padding-left: 204px
     padding-right: 204px   
+
+.hello-screen__title
+    font-size: 48px
+    font-weight: 600
+    letter-spacing: 0.96px
+    margin-bottom: 20px
+
+.hello-screen__text
+    font-size: 24px
+    font-family: Arial, sans-serif
+    line-height: 146%
+    margin-bottom: 42px
+
+.hello-screen__row
+    display: flex
+    align-items: flex-start
+    gap: 108px
+
+.hello-screen__column
+    width: 83px
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 2px
+
+.item-hello-screen__title
+    font-size: 48px
+    font-weight: 600
+    letter-spacing: 0.96px
+    color: #218A3D
+
+.item-hello-screen__text
+    font-size: 24px
+    font-family: Arial, sans-serif
+    line-height: 146%
+    margin-left: auto
+    margin-right: auto
+    width: 6em
+
+.types-course
+    @include types
+    gap: $gap + 6
+
+
+
+.types-course__content
+    @include box-inf-row
+    
+
+.title
+    @include title
+
+.text
+    @include text
+
+
+.box-inf
+    @include box-inf
+
+.types-course__box-inf
+    display: flex
+    height: 364px
+    padding: 46px 46px 60px 44px
+    flex-direction: column
+    align-items: flex-start
+    gap: 32px
+    flex: 1 0 0
+
+.types-course__title
+    flex-direction: column
+    align-self: stretch
+    font-size: 24px
+    font-weight: 600
+    line-height: 138%
+    letter-spacing: 0.48px
+
+.types-course__text
+    font-size: 18px
+    font-family: Arial, sans-serif
+    line-height: 146%
+
+.recruitment
+    @include types
+
+.head
+    @include head
+
+.recruitment__content
+    @include box-inf-row
